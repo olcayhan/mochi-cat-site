@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mochi — the cat who reads with you</title>
+  <meta name="description" content="A tiny pixel-art cat that walks on the actual lines of text on the page you're reading. No accounts, no ads, no network requests — ever." />
+  <link rel="icon" type="image/png" href="assets/icon-128.png" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #fdfcfb;
+      --card-bg: rgba(0, 0, 0, 0.025);
+      --fg: #2b2028;
+      --muted: #786f7b;
+      --line: #ede8e3;
+      --accent: #e79b4b;
+      --accent-soft: rgba(231, 155, 75, 0.14);
+      --accent-hover: #d88a38;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c181d;
+        --card-bg: rgba(255, 255, 255, 0.04);
+        --fg: #f4efe9;
+        --muted: #9e93a0;
+        --line: #2e262f;
+        --accent: #f0a354;
+        --accent-soft: rgba(240, 163, 84, 0.18);
+        --accent-hover: #e09445;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+    header.top {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 40px;
+    }
+    header.top img { width: 32px; height: 32px; border-radius: 8px; }
+    header.top span { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+
+    h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.2; margin: 0 0 16px; letter-spacing: -0.01em; }
+    .tagline { color: var(--muted); font-size: 18px; margin: 0 0 32px; }
+
+    .hero-img {
+      width: 100%; height: auto; border-radius: 14px; margin: 0 0 40px;
+      border: 1px solid var(--line); box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    }
+
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 40px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600;
+      background: var(--accent-soft); color: var(--fg); border: 1px solid var(--line);
+    }
+
+    h2 { font-size: 20px; margin: 40px 0 12px; }
+    p { margin: 0 0 16px; }
+    .lede { color: var(--muted); }
+
+    .breeds {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px; margin: 8px 0 8px;
+    }
+    .breed-card {
+      padding: 14px; border-radius: 10px; background: var(--card-bg);
+      border: 1px solid var(--line); text-align: center;
+    }
+    .breed-swatch { width: 20px; height: 20px; border-radius: 50%; margin: 0 auto 8px; border: 1.5px solid var(--fg); }
+    .breed-swatch.ginger { background: #e79b4b; }
+    .breed-swatch.tuxedo { background: #36364a; border-color: #f2ece6; }
+    .breed-swatch.calico { background: linear-gradient(135deg, #df8d44 50%, #faf7f0 50%); }
+    .breed-swatch.midnight { background: #121218; border-color: #fab82a; }
+    .breed-card strong { display: block; font-size: 14px; }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 15px;
+      text-decoration: none; border: 1px solid transparent;
+    }
+    .btn.primary { background: var(--accent); color: #221a1e; }
+    .btn.primary:hover { background: var(--accent-hover); }
+    .btn.secondary { background: var(--card-bg); color: var(--fg); border-color: var(--line); }
+    .btn.secondary:hover { border-color: var(--accent); }
+    .btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+    footer {
+      margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="top">
+      <img src="assets/icon-128.png" alt="" />
+      <span>Mochi</span>
+    </header>
+
+    <h1>The cat who reads with you.</h1>
+    <p class="tagline">A tiny pixel-art cat that walks on the actual lines of text on the page
+      you're reading — no accounts, no ads, no network requests, ever.</p>
+
+    <img class="hero-img" src="assets/hero.png" alt="Mochi walking along the lines of text on an article page, with a heading and figure it can perch on." />
+
+    <div class="badges">
+      <span class="badge">🔒 Zero network requests</span>
+      <span class="badge">🧘 Never interrupts your reading</span>
+      <span class="badge">🌐 English &amp; Türkçe</span>
+      <span class="badge">🆓 Free, no accounts</span>
+    </div>
+
+    <h2>How it works</h2>
+    <p>Unlike a screen pet that floats aimlessly on top of the page, Mochi understands the
+      structure of what you're reading. It walks along sentences, perches on headings, hops
+      between paragraphs, and curls up on images. Right-click to send it away for 10 minutes,
+      30, an hour, or the rest of the day — or press <kbd>Alt+Shift+C</kbd>
+      (<kbd>⌥⇧C</kbd> on Mac) to hide it instantly, anywhere.</p>
+
+    <h2>Four coats</h2>
+    <div class="breeds">
+      <div class="breed-card"><div class="breed-swatch ginger"></div><strong>Ginger</strong></div>
+      <div class="breed-card"><div class="breed-swatch tuxedo"></div><strong>Tuxedo</strong></div>
+      <div class="breed-card"><div class="breed-swatch calico"></div><strong>Calico</strong></div>
+      <div class="breed-card"><div class="breed-swatch midnight"></div><strong>Midnight</strong></div>
+    </div>
+
+    <h2>Privacy, honestly</h2>
+    <p class="lede">Mochi makes zero network requests. It has no analytics, no accounts, and no
+      remote code. Everything it remembers — your cat's name, its coat, your site preferences —
+      stays in <code>chrome.storage.local</code>, on your machine, never synced or sent
+      anywhere. Read the full <a href="privacy.html">privacy policy</a>.</p>
+
+    <div class="cta-row">
+      <!-- Filled in once the Chrome Web Store listing is live. -->
+      <a class="btn primary" href="#" aria-disabled="true">Coming soon to the Chrome Web Store</a>
+      <a class="btn secondary" href="privacy.html">Privacy policy</a>
+    </div>
+
+    <footer>
+      <span>Mochi Cat</span>
+      <a href="mailto:kolcayhan1@gmail.com">kolcayhan1@gmail.com</a>
+    </footer>
+  </main>
+</body>
+</html>

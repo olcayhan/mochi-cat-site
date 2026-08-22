@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Mochi</title>
+  <meta name="description" content="Mochi's privacy policy: zero data collection, zero network requests, everything stays on your device." />
+  <link rel="icon" type="image/png" href="assets/icon-128.png" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #fdfcfb;
+      --card-bg: rgba(0, 0, 0, 0.025);
+      --fg: #2b2028;
+      --muted: #786f7b;
+      --line: #ede8e3;
+      --accent: #e79b4b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c181d;
+        --card-bg: rgba(255, 255, 255, 0.04);
+        --fg: #f4efe9;
+        --muted: #9e93a0;
+        --line: #2e262f;
+        --accent: #f0a354;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 680px; margin: 0 auto; padding: 56px 24px 96px; }
+    a.back { color: var(--muted); text-decoration: none; font-size: 14px; }
+    a.back:hover { color: var(--fg); }
+    h1 { font-size: 30px; margin: 20px 0 4px; letter-spacing: -0.01em; }
+    .updated { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+    .intro { color: var(--muted); margin: 0 0 32px; }
+    h2 { font-size: 18px; margin: 36px 0 12px; }
+    ul { padding-left: 20px; margin: 0 0 8px; }
+    li { margin: 0 0 8px; }
+    p { margin: 0 0 16px; }
+    strong { color: var(--fg); }
+    table { border-collapse: collapse; width: 100%; margin: 8px 0 8px; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+    code { background: var(--card-bg); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; font-size: 0.92em; }
+    hr { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html">← Mochi</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: August 22, 2026</p>
+
+    <p class="intro">Mochi Cat ("the Extension") is developed as a privacy-first,
+      zero-telemetry browser extension. Your privacy is not a setting; it is the core
+      architectural principle of this software.</p>
+
+    <h2>1. Zero Data Collection</h2>
+    <ul>
+      <li><strong>No Personal Data:</strong> Mochi does not collect, transmit, store, or sell
+        any personally identifiable information (such as your name, email, IP address, or
+        location).</li>
+      <li><strong>No Browsing Activity Tracking:</strong> Mochi does not track, log, or
+        transmit URLs, page contents, reading habits, keystrokes, or mouse movements.</li>
+      <li><strong>No Analytics or Telemetry:</strong> Mochi contains no third-party tracking
+        scripts, analytics SDKs, advertising libraries, or telemetry beacons.</li>
+      <li><strong>Zero Outbound Network Requests:</strong> The extension makes zero network
+        requests. It operates 100% offline. All sprites, scripts, and localization catalogues
+        are bundled directly within the extension package.</li>
+    </ul>
+
+    <h2>2. Data Storage on Your Device</h2>
+    <p>Mochi uses <code>chrome.storage.local</code> exclusively to store your preferences on
+      your local machine:</p>
+    <ul>
+      <li>The name you chose for your cat</li>
+      <li>Your selected coat / breed</li>
+      <li>The liveliness (energy) preference</li>
+      <li>Your language preference (Turkish, English, or Automatic)</li>
+      <li>A list of hostnames you have explicitly muted or allowed</li>
+      <li>A timestamp for the Snooze timer</li>
+    </ul>
+    <p><strong>None of this information ever leaves your device.</strong> It is stored in
+      <code>storage.local</code>, not <code>storage.sync</code> — it is not synced across
+      Google accounts or sent to any remote server.</p>
+
+    <h2>3. Permissions Justification</h2>
+    <p>Mochi requests the minimum permissions required to function:</p>
+    <table>
+      <tr><th>Permission</th><th>Purpose</th></tr>
+      <tr>
+        <td><code>storage</code></td>
+        <td>To save your cat's name, coat, energy, and site preferences locally on your computer.</td>
+      </tr>
+      <tr>
+        <td><code>activeTab</code></td>
+        <td>To read the hostname of the page you are looking at, so the popup's "show on this
+          site" switch knows which site it is toggling. Granted only at the moment you click
+          the toolbar icon; nothing runs in the background because of it.</td>
+      </tr>
+      <tr>
+        <td>Content script access<br /><code>http://*/*</code>, <code>https://*/*</code></td>
+        <td>Not a host permission — <code>host_permissions</code> is empty. The content
+          script's own match pattern is what lets it detect text line bounding boxes and
+          render the cat on the pages you browse, because the cat has to live on the page you
+          are reading. It never transmits page data.</td>
+      </tr>
+    </table>
+
+    <h2>4. Children's Privacy</h2>
+    <p>Mochi does not collect information from anyone, including children under the age of 13.</p>
+
+    <h2>5. Contact</h2>
+    <p>If you have questions about this privacy policy, contact
+      <a href="mailto:kolcayhan1@gmail.com">kolcayhan1@gmail.com</a>.</p>
+
+    <hr />
+    <p><a class="back" href="index.html">← Back to Mochi</a></p>
+  </main>
+</body>
+</html>
