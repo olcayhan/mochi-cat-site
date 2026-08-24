@@ -57,7 +57,7 @@
   <main>
     <a class="back" href="index.html">← Mochi Cat</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 22, 2026</p>
+    <p class="updated">Last updated: August 24, 2026</p>
 
     <p class="intro">Mochi Cat ("the Extension") is developed as a privacy-first,
       zero-telemetry browser extension. Your privacy is not a setting; it is the core
@@ -87,7 +87,14 @@
       <li>Your language preference (Turkish, English, or Automatic)</li>
       <li>A list of hostnames you have explicitly muted or allowed</li>
       <li>A timestamp for the Snooze timer</li>
+      <li>Whether the cat is switched on at all, which is what the toolbar's master switch
+        and the keyboard shortcut both write</li>
+      <li>Whether you have finished the one-time welcome introduction, so that it is never
+        shown to you twice</li>
     </ul>
+    <p>That list is exhaustive: it is every field the extension writes. Google's User Data
+      policy counts data as "handled" even when it never leaves the machine, so an incomplete
+      list here would be a false statement rather than a tidy one.</p>
     <p><strong>None of this information ever leaves your device.</strong> It is stored in
       <code>storage.local</code>, not <code>storage.sync</code> — it is not synced across
       Google accounts or sent to any remote server.</p>
